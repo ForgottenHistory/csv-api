@@ -15,9 +15,12 @@ import org.springframework.stereotype.Component;
 
 import com.example.csvapi.model.Person;
 
+////////////////////////////////////////////////////////////////////////////////////////////
+
 @Component
 public class CsvParser {
 
+    ////////////////////////////////////////////////////////////////////////////////////////////
     /**
      * Parses the CSV file and converts each row to a Person object
      *
@@ -25,6 +28,8 @@ public class CsvParser {
      * @return List of Person objects
      * @throws IOException if file is not found, empty, or cannot be parsed
      */
+    ////////////////////////////////////////////////////////////////////////////////////////////
+    
     public List<Person> parseCsvFile(String fileName) throws IOException {
         Path pathToFile = Paths.get(fileName);
 

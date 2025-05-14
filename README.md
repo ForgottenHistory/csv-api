@@ -6,26 +6,27 @@ A REST API that reads data from a CSV file and returns it in JSON format via a G
 
 - GET endpoint that returns data from a CSV file in JSON format
 - Optional query parameter to limit the number of returned records
-- Comprehensive error handling:
+- Error handling:
   - 400 Bad Request if limit is not a positive integer
   - 204 No Content if no data is found
   - 500 Internal Server Error if the file is missing or invalid
 
 ## How to Build & Run
 
-To build the application, run:
+**Install & run bat files have been included. Run install then run.**
+
+To manually build the application, run in terminal:
 
 ```bash
 mvn clean install
 ```
-
-The application will start on port 8080 by default.
-To start:
-
+Start:
 
 ```bash
 bashmvn spring-boot:run
 ```
+
+Application will start on port 8080 by default.
 
 Use HTTP GET requests to receive data.
 ```
@@ -65,11 +66,12 @@ id,name,age,email
 3,Charlie,40,charlie@example.com
 ```
 
-The default location for the CSV file is src/main/resources/data.csv.
+Default location for the CSV file is src/main/resources/data.csv.
 
 ## Configuration
 
 You can configure the location of the CSV file by setting the csv.file.path property in application.properties:
+
 propertiescsv.file.path=src/main/resources/custom-data.csv
 
 ## Technologies Used

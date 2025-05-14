@@ -5,10 +5,12 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
 
 import com.example.csvapi.model.Person;
 import com.example.csvapi.util.CsvParser;
 
+@Service  // Make sure this annotation is present
 public class CsvService {
 
     private final CsvParser csvParser;

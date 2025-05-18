@@ -13,9 +13,11 @@ A REST API that reads data from a CSV file and returns it in JSON format via a G
 
 ## How to Build & Run
 
-**Install & run bat files have been included. Run install then run.**
+**Install & run bat files have been included. Install then run.**
 
-To manually build the application, run in terminal:
+**REQUIREMENTS: JAVA 21 & MAVEN**
+
+To manually build the application, run in terminal at root folder:
 
 ```bash
 mvn clean install
@@ -26,7 +28,7 @@ Start:
 bashmvn spring-boot:run
 ```
 
-Application will start on port 8080 by default.
+Application will be on port 8080 by default.
 
 Use HTTP GET requests to receive data.
 ```
@@ -76,7 +78,7 @@ propertiescsv.file.path=src/main/resources/custom-data.csv
 
 ## Technologies Used
 
-- Java 17
+- Java 21
 - Spring Boot
 - Apache Commons CSV
 - Maven

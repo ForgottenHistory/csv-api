@@ -30,7 +30,6 @@ public class CsvService {
      * @param csvFilePath The path to the CSV file, injected from application
      * properties
      */
-    ////////////////////////////////////////////////////////////////////////////////////////////
     
     public CsvService(CsvParser csvParser, @Value("${csv.file.path:src/main/resources/data.csv}") String csvFilePath) {
         this.csvParser = csvParser;
@@ -47,7 +46,6 @@ public class CsvService {
      * @return A list of Person objects
      * @throws IOException If there is an error reading or parsing the CSV file
      */
-    ////////////////////////////////////////////////////////////////////////////////////////////
     
     public List<Person> getData(Integer limit) throws IOException {
         logger.debug("Retrieving data with limit: {}", limit);
@@ -77,4 +75,5 @@ public class CsvService {
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////
+
 }

@@ -31,7 +31,6 @@ public class DataController {
      *
      * @param csvService The service that provides access to CSV data
      */
-    ////////////////////////////////////////////////////////////////////////////////////////////
 
     public DataController(CsvService csvService) {
         this.csvService = csvService;
@@ -44,7 +43,6 @@ public class DataController {
      * @param limit Optional parameter to limit the number of records returned
      * @return ResponseEntity containing either the data or an error message
      */
-    ////////////////////////////////////////////////////////////////////////////////////////////
 
     @GetMapping("/data")
     public ResponseEntity<?> getData(@RequestParam(required = false) Integer limit) {

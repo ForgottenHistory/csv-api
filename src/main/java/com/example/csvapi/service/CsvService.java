@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +16,8 @@ import com.example.csvapi.util.CsvParser;
 
 @Service  // Make sure this annotation is present
 public class CsvService {
+
+    private static final Logger logger = LoggerFactory.getLogger(CsvService.class);
 
     private final CsvParser csvParser;
     private final String csvFilePath;
@@ -43,21 +47,34 @@ public class CsvService {
      * @return A list of Person objects
      * @throws IOException If there is an error reading or parsing the CSV file
      */
-    public List<Person> getData(Integer limit) throws IOException 
-    {
+    ////////////////////////////////////////////////////////////////////////////////////////////
+    
+    public List<Person> getData(Integer limit) throws IOException {
+        logger.debug("Retrieving data with limit: {}", limit);
+
         // Get all data from the CSV file
+        long startTime = System.currentTimeMillis();
         List<Person> allData = csvParser.parseCsvFile(csvFilePath);
-        
+        long parseTime = System.currentTimeMillis() - startTime;
+
+        logger.info("Retrieved {} records in {}ms", allData.size(), parseTime);
+
+        ////////////////////////////////////////////////////////////////////////////////////////////
         // If no limit is specified or the limit is invalid, return all data
         if (limit == null || limit <= 0) {
+            logger.debug("Returning all {} records (no valid limit specified)", allData.size());
             return allData;
         }
-        
+
         // Otherwise, return only the specified number of records
-        return allData.stream()
+        List<Person> limitedData = allData.stream()
                 .limit(limit)
                 .collect(Collectors.toList());
+                
+        logger.debug("Returning {} of {} total records (limit={})", limitedData.size(), allData.size(), limit);
+        return limitedData;
     }
 
-    ////////////////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////////////////
 }

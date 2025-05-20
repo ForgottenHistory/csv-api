@@ -76,6 +76,15 @@ You can configure the location of the CSV file by setting the csv.file.path prop
 
 propertiescsv.file.path=src/main/resources/custom-data.csv
 
+## Potential Improvements
+
+- Custom exception classes
+- Standarized API responses
+- Streaming & caching in file reading
+- Unit tests
+- Swagger documentation
+- Configuration in external property file
+
 ## Technologies Used
 
 - Java 21

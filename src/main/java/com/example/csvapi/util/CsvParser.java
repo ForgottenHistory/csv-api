@@ -21,7 +21,7 @@ import com.example.csvapi.model.Person;
 // CSV-PARSER
 // This class is responsible for parsing a CSV file and converting each row into a Person object.
 // It uses Apache Commons CSV library to handle the parsing.
-// POTENTIAL EXCEPTIONS: Exceptionally long files might cause errors. Streaming, caching, etc might be
+// POTENTIAL EXCEPTIONS: Exceptionally long files might cause errors. Streaming, caching, etc might be needed
 
 @Component
 public class CsvParser {
